@@ -12,9 +12,10 @@ class PostsController < ApplicationController
 	end
 
 	def create
+		if @post.save
 	  @post = Post.new(params)
-	  @post.save
 	  redirect_to post_path(@post)
+	  end 
 	end
 
 	def update
